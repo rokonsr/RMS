@@ -1,5 +1,4 @@
 G:\RestaurantManagementSystem\RMS\RMS.Model\bin\Debug\RMS.Model.dll
 G:\RestaurantManagementSystem\RMS\RMS.Model\bin\Debug\RMS.Model.pdb
-G:\RestaurantManagementSystem\RMS\RMS.Model\obj\Debug\RMS.Model.csprojResolveAssemblyReference.cache
 G:\RestaurantManagementSystem\RMS\RMS.Model\obj\Debug\RMS.Model.dll
 G:\RestaurantManagementSystem\RMS\RMS.Model\obj\Debug\RMS.Model.pdb

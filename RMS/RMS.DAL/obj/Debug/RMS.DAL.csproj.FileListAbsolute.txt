@@ -8,6 +8,6 @@ G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Debug\Newtonsoft.Json.xml
 G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Debug\System.Net.Http.Formatting.xml
 G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Debug\System.Web.Http.xml
 G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Debug\System.Web.Http.WebHost.xml
-G:\RestaurantManagementSystem\RMS\RMS.DAL\obj\Debug\RMS.DAL.csprojResolveAssemblyReference.cache
 G:\RestaurantManagementSystem\RMS\RMS.DAL\obj\Debug\RMS.DAL.dll
 G:\RestaurantManagementSystem\RMS\RMS.DAL\obj\Debug\RMS.DAL.pdb
+G:\RestaurantManagementSystem\RMS\RMS.DAL\obj\Debug\RMS.DAL.csprojResolveAssemblyReference.cache
