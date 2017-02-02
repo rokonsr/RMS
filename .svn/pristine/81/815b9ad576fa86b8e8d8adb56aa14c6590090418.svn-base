@@ -1,0 +1,32 @@
+﻿$(document).ready(function () {
+    $('#txtUpdateProductName').keyup(function () {
+        var productName = $(this).val();
+
+        if (productName.length > 5) {
+            $.ajax({
+                url: "../WebServices/AutoCompleteService.asmx/ProductNameIfExist",
+                method: 'post',
+                data: { productName: productName },
+                dataType: 'json',
+                success: function (data) {
+                    var divElement = $('#divOutput');
+
+                    if (data.ProductNameInUse) {
+                        divElement.text(productName + ' is already in use');
+                        divElement.css('color', 'red')
+                    }
+                },
+                error: function (err) {
+                    alert(Error);
+                }
+            });
+        }
+    });
+});
+
+
+//open new tab on click event
+function SetTarget() {
+        document.forms[0].target = "_blank";    
+}
+

@@ -1,0 +1,90 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
+using CrystalDecisions.CrystalReports.Engine;
+using RMS.BLL;
+using RMS.Model;
+
+namespace RMS.Report.PurchaseReport
+{
+    public partial class SupplierwisePurchaseDetail1 : System.Web.UI.Page
+    {
+        private List<Supplier> objSupplierList;
+        private SupplierBiz objSupplierBiz;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                PopulateDropDownForSupplier();
+            }
+            SelectedValue();
+        }
+
+        private void PopulateDropDownForSupplier()
+        {
+            objSupplierList = new List<Supplier>();
+            objSupplierBiz = new SupplierBiz();
+
+            objSupplierList = objSupplierBiz.GetSupplierList();
+            ddlSupplier.DataSource = objSupplierList;
+            ddlSupplier.DataValueField = "SupplierId";
+            ddlSupplier.DataTextField = "SupplierName";
+            ddlSupplier.DataBind();
+
+            ddlSupplier.Items.Insert(0, new ListItem("--Select Supplier--", "0"));
+        }
+
+        protected void ddlSupplier_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReportDocument rdDocument = new ReportDocument();
+            rdDocument.Load(Server.MapPath("SupplierwisePurchaseDetail.rpt"));
+            rdDocument.SetParameterValue("@SupplierId", ddlSupplier.SelectedValue);
+            SupplierwisePurchaseDetails.ReportSource = rdDocument;
+            SupplierwisePurchaseDetails.EnableDatabaseLogonPrompt = false;
+            SupplierwisePurchaseDetails.ToolPanelView = 0;
+            SupplierwisePurchaseDetails.Zoom(125);
+        }
+
+        private void SelectedValue()
+        {
+            if (rdPurchaseDetailList.SelectedValue == "1")
+            {
+                pnlDisplaySupplier.Visible = true;
+                if (ddlSupplier.SelectedIndex > 0)
+                {
+                    SupplierwisePurchaseDetails.Visible = true;
+                }
+                else
+                {
+                    SupplierwisePurchaseDetails.Visible = false;
+                }
+                InvoicewisePurchaseDetails.Controls.Clear();
+                InvoicewisePurchaseDetails.Visible = false;
+                txtInvoiceNumber.Text = string.Empty;
+                pnlDisplayInvoice.Visible = false;
+            }
+            else if (rdPurchaseDetailList.SelectedValue == "2")
+            {
+                SupplierwisePurchaseDetails.Controls.Clear();
+                ddlSupplier.SelectedIndex = 0;
+                SupplierwisePurchaseDetails.Visible = false;
+                pnlDisplaySupplier.Visible = false;
+                pnlDisplayInvoice.Visible = true;
+            }
+        }
+
+        protected void btnSearch_OnClick(object sender, EventArgs e)
+        {
+            ReportDocument rdDocument = new ReportDocument();
+            rdDocument.Load(Server.MapPath("InvoicewisePurchaseDetail.rpt"));
+            rdDocument.SetParameterValue("@InvoiceNumber", txtInvoiceNumber.Text.Trim());
+            InvoicewisePurchaseDetails.ReportSource = rdDocument;
+            InvoicewisePurchaseDetails.EnableDatabaseLogonPrompt = false;
+            InvoicewisePurchaseDetails.ToolPanelView = 0;
+            InvoicewisePurchaseDetails.Zoom(125);
+
+            InvoicewisePurchaseDetails.Visible = true;
+        }
+    }
+}

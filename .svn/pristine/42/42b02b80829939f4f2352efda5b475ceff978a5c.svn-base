@@ -1,0 +1,68 @@
+﻿using System;
+using CrystalDecisions.CrystalReports.Engine;
+
+namespace RMS.Report.ItemReport
+{
+    public partial class ItemDetail : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            SelectedValue();
+        }
+
+        private void SelectedValue()
+        {
+            if (rdItemDetailList.SelectedValue == "1")
+            {
+                pnlDisplayItem.Visible = true;
+                pnlDisplayRegion.Visible = false;
+                pnlFoodSchedule.Visible = false;
+
+                crItemDetails.Visible = true;
+                crRegionDetail.Visible = false;
+                crFoodScheduleDetails.Visible = false;
+            }
+            else if (rdItemDetailList.SelectedValue == "2")
+            {
+                pnlDisplayItem.Visible = false;
+                pnlDisplayRegion.Visible = true;
+                pnlFoodSchedule.Visible = false;
+
+                crItemDetails.Visible = false;
+                crRegionDetail.Visible = true;
+                crFoodScheduleDetails.Visible = false;
+            }
+            else if (rdItemDetailList.SelectedValue == "3")
+            {
+                pnlDisplayItem.Visible = false;
+                pnlDisplayRegion.Visible = false;
+                pnlFoodSchedule.Visible = true;
+
+                crItemDetails.Visible = false;
+                crRegionDetail.Visible = false;
+                crFoodScheduleDetails.Visible = true;
+            }
+        }
+
+        protected void btnItem_OnClick(object sender, EventArgs e)
+        {
+            ReportDocument rdDocument = new ReportDocument();
+            rdDocument.Load(Server.MapPath("ItemwiseProductDetail.rpt"));
+            rdDocument.SetParameterValue("@ItemName", txtItemName.Text.Trim());
+            crItemDetails.ReportSource = rdDocument;
+            crItemDetails.EnableDatabaseLogonPrompt = false;
+            crItemDetails.ToolPanelView = 0;
+            crItemDetails.Zoom(125);
+        }
+
+        protected void btnRegion_OnClick(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected void btnFoodSchedule_OnClick(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
