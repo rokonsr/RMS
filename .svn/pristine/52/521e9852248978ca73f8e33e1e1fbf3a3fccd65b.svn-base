@@ -1,0 +1,36 @@
+﻿using System;
+using System.Data;
+using System.Data.Common;
+using RMS.DAL;
+
+namespace RMS.BLL
+{
+    public class CompanyInfoBiz
+    {
+        private IDataAccess objDataAccess;
+        private DbCommand objDbCommand;
+
+        public DataTable CompanyInformation()
+        {
+            objDataAccess = DataAccess.NewDataAccess();
+            objDbCommand = objDataAccess.GetCommand(true, IsolationLevel.ReadCommitted);
+            DbDataReader objDbDataReader = null;
+            DataTable dt = new DataTable();
+
+            try
+            {
+                dt = objDataAccess.ExecuteTable(objDbCommand, "[cr].[uspCRCompanyInformation]", CommandType.StoredProcedure);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error : " + ex.Message);
+            }
+            finally
+            {
+                objDataAccess.Dispose(objDbCommand);
+            }
+
+            return dt;
+        }
+    }
+}

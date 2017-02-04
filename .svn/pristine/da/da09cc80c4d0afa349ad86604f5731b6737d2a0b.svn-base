@@ -1,0 +1,7 @@
+﻿namespace RMS.BLL
+{
+    //--Ataur-->
+    public class AdvanceSaleAmountBiz
+    {
+    }
+}

@@ -1,0 +1,141 @@
+﻿using System;
+using System.Data;
+using System.Data.Common;
+using RMS.DAL;
+using RMS.Model;
+
+namespace RMS.BLL
+{
+    //--Ataur-->
+
+    public class AdvanceSaleAmountBiz
+    {
+        private IDataAccess objDataAccess;
+        private DbCommand objDbCommand;
+
+        private void BuildModelForAdvanceSaleAmount(DbDataReader objDataReader, AdvanceSaleAmount objAdvanceSaleAmount)
+        {
+            DataTable objDataTable = objDataReader.GetSchemaTable();
+            foreach (DataRow dr in objDataTable.Rows)
+            {
+                String column = dr.ItemArray[0].ToString();
+                switch (column)
+                {
+                    case "SaleAdvanceId":
+                        if (!Convert.IsDBNull(objDataReader["SaleAdvanceId"]))
+                        {
+                            objAdvanceSaleAmount.SaleAdvanceId = Convert.ToInt16(objDataReader["SaleAdvanceId"]);
+                        }
+                        break;
+                    case "CustomerId":
+                        if (!Convert.IsDBNull(objDataReader["CustomerId"]))
+                        {
+                            objAdvanceSaleAmount.CustomerId = Convert.ToInt16(objDataReader["CustomerId"]);
+                        }
+                        break;
+                    case "CustomerUsername":
+                        if (!Convert.IsDBNull(objDataReader["CustomerUsername"]))
+                        {
+                            objAdvanceSaleAmount.CustomerUsername = objDataReader["CustomerUsername"].ToString();
+                        }
+                        break;
+                    case "TransactionType":
+                        if (!Convert.IsDBNull(objDataReader["TransactionType"]))
+                        {
+                            objAdvanceSaleAmount.TransactionType = Convert.ToByte(objDataReader["TransactionType"].ToString());
+                        }
+                        break;
+                    case "TransactionAmount":
+                        if (!Convert.IsDBNull(objDataReader["TransactionAmount"]))
+                        {
+                            objAdvanceSaleAmount.TransactionAmount = Convert.ToDecimal(objDataReader["TransactionAmount"].ToString());
+                        }
+                        break;
+
+                    case "IsActive":
+                        if (!Convert.IsDBNull(objDataReader["IsActive"]))
+                        {
+                            objAdvanceSaleAmount.IsActive = Convert.ToBoolean(objDataReader["IsActive"].ToString());
+                        }
+                        break;
+                    case "CreatedBy":
+                        if (!Convert.IsDBNull(objDataReader["CreatedBy"]))
+                        {
+                            objAdvanceSaleAmount.CreatedBy = Convert.ToInt16(objDataReader["CreatedBy"]);
+                        }
+                        break;
+                    case "CreatedDate":
+                        if (!Convert.IsDBNull(objDataReader["CreatedDate"]))
+                        {
+                            objAdvanceSaleAmount.CreatedDate = Convert.ToDateTime(objDataReader["CreatedDate"].ToString());
+                        }
+                        break;
+                    case "UpdatedBy":
+                        if (!Convert.IsDBNull(objDataReader["UpdatedBy"]))
+                        {
+                            objAdvanceSaleAmount.UpdatedBy = Convert.ToInt16(objDataReader["UpdatedBy"].ToString());
+                        }
+                        break;
+                    case "UpdatedDate":
+                        if (!Convert.IsDBNull(objDataReader["UpdatedDate"]))
+                        {
+                            objAdvanceSaleAmount.UpdatedDate = Convert.ToDateTime(objDataReader["UpdatedDate"].ToString());
+                        }
+                        break;
+                    case "SortedBy":
+                        if (!Convert.IsDBNull(objDataReader["SortedBy"]))
+                        {
+                            objAdvanceSaleAmount.SortedBy = Convert.ToByte(objDataReader["SortedBy"].ToString());
+                        }
+                        break;
+                    case "Remarks":
+                        if (!Convert.IsDBNull(objDataReader["Remarks"]))
+                        {
+                            objAdvanceSaleAmount.Remarks = objDataReader["Remarks"].ToString();
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public string AdvanceSaleReceiveAmount(AdvanceSaleAmount objAdvanceSaleAmount)
+        {
+            int noOfAffacted = 0;
+
+            objDataAccess = DataAccess.NewDataAccess();
+            objDbCommand = objDataAccess.GetCommand(true, IsolationLevel.Serializable);
+            //objDbCommand.AddInParameter("CustomerId", objSaleLedger.CustomerId);
+            objDbCommand.AddInParameter("CustomerUsername", objAdvanceSaleAmount.CustomerUsername);
+            objDbCommand.AddInParameter("TransactionType", objAdvanceSaleAmount.TransactionType);
+            objDbCommand.AddInParameter("TransactionAmount", objAdvanceSaleAmount.TransactionAmount);                    
+            objDbCommand.AddInParameter("CreatedBy", objAdvanceSaleAmount.CreatedBy);
+
+            try
+            {
+                noOfAffacted = objDataAccess.ExecuteNonQuery(objDbCommand, "[rdb].[uspCreateAdvanceSaleAmount]", CommandType.StoredProcedure);
+
+                if (noOfAffacted > 0)
+                {
+                    objDbCommand.Transaction.Commit();
+                    return "Save Successful";
+                }
+                else
+                {
+                    objDbCommand.Transaction.Rollback();
+                    return "Save Failed";
+                }
+            }
+            catch (Exception ex)
+            {
+                objDbCommand.Transaction.Rollback();
+                throw new Exception("Database Error Occured", ex);
+            }
+            finally
+            {
+                objDataAccess.Dispose(objDbCommand);
+            }
+        }
+    }
+}

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RMS.Report {
+namespace RMS.Report.PurchaseReport {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace RMS.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Header : ReportClass {
+    public class InvoicewisePurchaseDetail : ReportClass {
         
-        public Header() {
+        public InvoicewisePurchaseDetail() {
         }
         
         public override string ResourceName {
             get {
-                return "Header.rpt";
+                return "InvoicewisePurchaseDetail.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace RMS.Report {
         
         public override string FullResourceName {
             get {
-                return "RMS.Report.Header.rpt";
+                return "RMS.Report.PurchaseReport.InvoicewisePurchaseDetail.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace RMS.Report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedHeader : Component, ICachedReport {
+    public class CachedInvoicewisePurchaseDetail : Component, ICachedReport {
         
-        public CachedHeader() {
+        public CachedInvoicewisePurchaseDetail() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace RMS.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Header rpt = new Header();
+            InvoicewisePurchaseDetail rpt = new InvoicewisePurchaseDetail();
             rpt.Site = this.Site;
             return rpt;
         }
