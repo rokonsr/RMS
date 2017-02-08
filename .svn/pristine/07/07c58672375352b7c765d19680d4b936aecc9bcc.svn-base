@@ -1,0 +1,788 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3339CD2B-B4F6-4500-82ED-FFD1CB55FDAD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RMS</RootNamespace>
+    <AssemblyName>RMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=16.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.16.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web">
+      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\AutoComplete\jquery-ui.css" />
+    <Content Include="Content\AutoComplete\jquery-ui.js" />
+    <Content Include="Content\AutoComplete\jquery.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\ambient.jpg" />
+    <Content Include="Images\b15.png" />
+    <Content Include="Images\res.jpeg" />
+    <Content Include="Images\white.jpg" />
+    <Content Include="Images\woodBrown.jpg" />
+    <Content Include="Images\woodLight.jpg" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="Report\ItemReport\ItemDetail.aspx" />
+    <Content Include="Report\PurchaseReport\PurchaseDetail.aspx" />
+    <Content Include="Report\ReportViewer.aspx" />
+    <Content Include="Rms.Master" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Report\CrystalReportDataSet.xsc">
+      <DependentUpon>CrystalReportDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Report\CrystalReportDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CrystalReportDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Report\CrystalReportDataSet.xss">
+      <DependentUpon>CrystalReportDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\AutoCompleteTextBox.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Custom.js" />
+    <Content Include="Scripts\DatePicker\jquery-1.10.2.js" />
+    <Content Include="Scripts\DatePicker\jquery-ui.css" />
+    <Content Include="Scripts\DatePicker\jquery-ui.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jQuery_FormError\demo.css" />
+    <Content Include="Scripts\jQuery_FormError\index.html" />
+    <Content Include="Scripts\jQuery_FormError\jquery.formError.js" />
+    <Content Include="Scripts\jQuery_FormError\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jQuery_FormError\success.gif" />
+    <Content Include="Scripts\jQuery_FormError\test.cssPosition.html" />
+    <Content Include="Site\Content\flexslider.css" />
+    <Content Include="Site\Content\site.css" />
+    <Content Include="Site\Content\style.css" />
+    <Content Include="Site\Images\arrow.png" />
+    <Content Include="Site\Images\banner1.jpg" />
+    <Content Include="Site\Images\banner2.jpg" />
+    <Content Include="Site\Images\banner3.jpg" />
+    <Content Include="Site\Images\banner4.jpg" />
+    <Content Include="Site\Images\bg-li-list.png" />
+    <Content Include="Site\Images\body-bg.png" />
+    <Content Include="Site\Images\fb.png" />
+    <Content Include="Site\Images\glass.png" />
+    <Content Include="Site\Images\googleplus.png" />
+    <Content Include="Site\Images\icecream.png" />
+    <Content Include="Site\Images\leaf.png" />
+    <Content Include="Site\Images\logo.png" />
+    <Content Include="Site\Images\p-but.png" />
+    <Content Include="Site\Images\pic.jpg" />
+    <Content Include="Site\Images\pic1.jpg" />
+    <Content Include="Site\Images\pic10.jpg" />
+    <Content Include="Site\Images\pic11.jpg" />
+    <Content Include="Site\Images\pic12.jpg" />
+    <Content Include="Site\Images\pic13.jpg" />
+    <Content Include="Site\Images\pic14.jpg" />
+    <Content Include="Site\Images\pic15.jpg" />
+    <Content Include="Site\Images\pic16.jpg" />
+    <Content Include="Site\Images\pic17.jpg" />
+    <Content Include="Site\Images\pic18.jpg" />
+    <Content Include="Site\Images\pic2.jpg" />
+    <Content Include="Site\Images\pic3.jpg" />
+    <Content Include="Site\Images\pic4.jpg" />
+    <Content Include="Site\Images\pic5.jpg" />
+    <Content Include="Site\Images\pic6.jpg" />
+    <Content Include="Site\Images\pic7.jpg" />
+    <Content Include="Site\Images\pic8.jpg" />
+    <Content Include="Site\Images\pic9.jpg" />
+    <Content Include="Site\Images\pinterest.png" />
+    <Content Include="Site\Images\plate.png" />
+    <Content Include="Site\Images\search-icon.png" />
+    <Content Include="Site\Images\tw.png" />
+    <Content Include="Site\Images\twitter-icon.png" />
+    <Content Include="Site\Images\woodBrown.jpg" />
+    <Content Include="Site\index.aspx" />
+    <Content Include="Site\Scripts\jquery.flexslider.js" />
+    <Content Include="Site\Scripts\modernizr.js" />
+    <Content Include="Site\Scripts\theme.js" />
+    <Content Include="Site\Scripts\validity-master\.gitignore" />
+    <Content Include="Site\Scripts\validity-master\build\arrow.gif" />
+    <Content Include="Site\Scripts\validity-master\build\example.htm" />
+    <Content Include="Site\Scripts\validity-master\build\jquery-1.10.2.min.js" />
+    <Content Include="Site\Scripts\validity-master\build\jquery.validity.css" />
+    <Content Include="Site\Scripts\validity-master\build\jquery.validity.js" />
+    <Content Include="Site\Scripts\validity-master\build\jquery.validity.lang.de.js" />
+    <Content Include="Site\Scripts\validity-master\build\jquery.validity.lang.es.js" />
+    <Content Include="Site\Scripts\validity-master\build\jquery.validity.lang.fr.js" />
+    <Content Include="Site\Scripts\validity-master\build\jquery.validity.lang.nl.js" />
+    <Content Include="Site\Scripts\validity-master\build\jquery.validity.lang.ru.js" />
+    <Content Include="Site\Scripts\validity-master\build\jquery.validity.min.js" />
+    <Content Include="Site\Scripts\validity-master\compiler\compiler.jar" />
+    <Content Include="Site\Scripts\validity-master\compiler\help.txt" />
+    <Content Include="Site\Scripts\validity-master\demo\css\arrow.gif" />
+    <Content Include="Site\Scripts\validity-master\demo\css\bootstrap-responsive.css" />
+    <Content Include="Site\Scripts\validity-master\demo\css\bootstrap-responsive.min.css" />
+    <Content Include="Site\Scripts\validity-master\demo\css\bootstrap.css" />
+    <Content Include="Site\Scripts\validity-master\demo\css\bootstrap.min.css" />
+    <Content Include="Site\Scripts\validity-master\demo\css\jquery.validity.css" />
+    <Content Include="Site\Scripts\validity-master\demo\img\glyphicons-halflings-white.png" />
+    <Content Include="Site\Scripts\validity-master\demo\img\glyphicons-halflings.png" />
+    <Content Include="Site\Scripts\validity-master\demo\js\base64.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\bootstrap.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\bootstrap.min.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\demo.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\jquery-1.9.0.min.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\jquery.validity.css" />
+    <Content Include="Site\Scripts\validity-master\demo\js\jquery.validity.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\jquery.validity.lang.de.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\jquery.validity.lang.es.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\jquery.validity.lang.fr.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\jquery.validity.lang.nl.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\jquery.validity.lang.ru.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\jquery.validity.min.js" />
+    <Content Include="Site\Scripts\validity-master\demo\js\test.jquery.validity.min.js" />
+    <Content Include="Site\Scripts\validity-master\demo\livetest.htm" />
+    <Content Include="Site\Scripts\validity-master\jquery-1.10.2.min.js" />
+    <Content Include="Site\Scripts\validity-master\l18n\jquery.validity.lang.de.js" />
+    <Content Include="Site\Scripts\validity-master\l18n\jquery.validity.lang.es.js" />
+    <Content Include="Site\Scripts\validity-master\l18n\jquery.validity.lang.fr.js" />
+    <Content Include="Site\Scripts\validity-master\l18n\jquery.validity.lang.nl.js" />
+    <Content Include="Site\Scripts\validity-master\l18n\jquery.validity.lang.ru.js" />
+    <Content Include="Site\Scripts\validity-master\src\arrow.gif" />
+    <Content Include="Site\Scripts\validity-master\src\Big.js" />
+    <Content Include="Site\Scripts\validity-master\src\example.htm" />
+    <Content Include="Site\Scripts\validity-master\src\jquery.validity.core.js" />
+    <Content Include="Site\Scripts\validity-master\src\jquery.validity.css" />
+    <Content Include="Site\Scripts\validity-master\src\jquery.validity.header.js" />
+    <Content Include="Site\Scripts\validity-master\src\jquery.validity.outputs.js" />
+    <Content Include="Site\Scripts\validity-master\tests\index.html" />
+    <Content Include="Site\Scripts\validity-master\tests\qunit.css" />
+    <Content Include="Site\Scripts\validity-master\tests\qunit.js" />
+    <Content Include="Site\Scripts\validity-master\tests\sample\index.htm" />
+    <Content Include="Site\Scripts\validity-master\tests\sample\otherinputs.htm" />
+    <Content Include="Site\Scripts\validity-master\tests\sample\select.test.htm" />
+    <Content Include="Site\Scripts\validity-master\tests\sample\simple.htm" />
+    <Content Include="Site\Scripts\validity-master\tests\sample\textareanonhtmltest.htm" />
+    <Content Include="Site\Scripts\validity-master\tests\testSetup.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\aggregate\distinct.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\aggregate\equal.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\aggregate\sum.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\aggregate\sumMax.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\aggregate\sumMin.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\alphabet.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\greaterThan.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\greaterThanOrEqualTo.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\hidden.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\lessThan.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\lessThanOrEqualTo.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\date.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\email.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\fn.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\guid.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\integer.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\number.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\phone.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\regex.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\time12.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\time24.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\usd.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\match\zip.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\maxLength.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\minCharClass.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\minLength.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\nonHtml.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\range.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\common\require.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\private\addToReport.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\private\capitalize.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\private\debugPrivates.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\private\format.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\private\infer.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\private\numericSum.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\private\validate.js" />
+    <Content Include="Site\Scripts\validity-master\tests\unit-tests\static.js" />
+    <Content Include="Site\Scripts\validity-master\tests\validity.logo.png" />
+    <Content Include="Site\Scripts\validity-master\version.txt" />
+    <Content Include="Site\Site.Master" />
+    <Content Include="Site\Images\logo.psd" />
+    <Content Include="Scripts\jQuery_FormError\README.md" />
+    <Content Include="Site\Scripts\validity-master\build\README.md" />
+    <Content Include="Site\Scripts\validity-master\compiler\COPYING" />
+    <Content Include="Site\Scripts\validity-master\compiler\README" />
+    <Content Include="Site\Scripts\validity-master\src\README.md" />
+    <Content Include="Site\Scripts\validity-master\Makefile" />
+    <Content Include="Site\Scripts\validity-master\README.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\tvRoleManagement.js" />
+    <Content Include="UI\Admin\AssignRole.aspx" />
+    <Content Include="UI\Admin\CreateCustomer.aspx" />
+    <Content Include="UI\Admin\CreateDesignation.aspx" />
+    <Content Include="UI\Admin\CreateRole.aspx" />
+    <Content Include="UI\Admin\CreateUser.aspx" />
+    <Content Include="UI\Admin\RoleMenuMapping.aspx" />
+    <Content Include="UI\Admin\UpdateCustomer.aspx" />
+    <Content Include="UI\Admin\UpdateDesignation.aspx" />
+    <Content Include="UI\Admin\UpdateRole.aspx" />
+    <Content Include="UI\Admin\UpdateUser.aspx" />
+    <Content Include="UI\Item\CreateBrand.aspx" />
+    <Content Include="UI\Item\CreateCategory.aspx" />
+    <Content Include="UI\Item\CreateFoodSchedule.aspx" />
+    <Content Include="UI\Item\CreateMeasurement.aspx" />
+    <Content Include="UI\Item\CreateProduct.aspx" />
+    <Content Include="UI\Item\CreateRegion.aspx" />
+    <Content Include="UI\Item\CreateSupplier.aspx" />
+    <Content Include="UI\Item\UpdateBrand.aspx" />
+    <Content Include="UI\Item\UpdateCategory.aspx" />
+    <Content Include="UI\Item\UpdateFoodSchedule.aspx" />
+    <Content Include="UI\Item\UpdateMeasurement.aspx" />
+    <Content Include="UI\Item\UpdateProduct.aspx" />
+    <Content Include="UI\Item\UpdateRegion.aspx" />
+    <Content Include="UI\Item\UpdateSupplier.aspx" />
+    <Content Include="UI\PurchaseUI\CreatePurchase.aspx" />
+    <Content Include="UI\PurchaseUI\PurchaseLedgerDetails.aspx" />
+    <Content Include="UI\PurchaseUI\ReturnPurchase.aspx" />
+    <Content Include="UI\SaleUI\AdvanceSaleReceive.aspx" />
+    <Content Include="UI\SaleUI\CreateSale.aspx" />
+    <Content Include="UI\SaleUI\CustomerAmountReceived.aspx" />
+    <Content Include="UI\SaleUI\ReturnSale.aspx" />
+    <Content Include="UI\SaleUI\SaleLedgerDetails.aspx" />
+    <Content Include="UI\WebServices\AutoCompleteService.asmx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\CrystalReportDataSet.cs">
+      <DependentUpon>CrystalReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\CrystalReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ItemReport\SchedulewiseFood.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchedulewiseFood.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ItemReport\ItemDetail.aspx.cs">
+      <DependentUpon>ItemDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ItemReport\ItemDetail.aspx.designer.cs">
+      <DependentUpon>ItemDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ItemReport\ItemwiseProductDetail.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemwiseProductDetail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ItemReport\RegionDetail.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegionDetail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PurchaseReport\InvoicewisePurchaseDetail.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoicewisePurchaseDetail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PurchaseReport\PurchaseDetail.aspx.cs">
+      <DependentUpon>PurchaseDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\PurchaseReport\PurchaseDetail.aspx.designer.cs">
+      <DependentUpon>PurchaseDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PurchaseReport\SupplierwisePurchaseDetail.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupplierwisePurchaseDetail.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ReportViewer.aspx.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ReportViewer.aspx.designer.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rms.Master.cs">
+      <DependentUpon>Rms.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rms.Master.designer.cs">
+      <DependentUpon>Rms.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\AssignRole.aspx.cs">
+      <DependentUpon>AssignRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\AssignRole.aspx.designer.cs">
+      <DependentUpon>AssignRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\CreateCustomer.aspx.cs">
+      <DependentUpon>CreateCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\CreateCustomer.aspx.designer.cs">
+      <DependentUpon>CreateCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\CreateDesignation.aspx.cs">
+      <DependentUpon>CreateDesignation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\CreateDesignation.aspx.designer.cs">
+      <DependentUpon>CreateDesignation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\CreateRole.aspx.cs">
+      <DependentUpon>CreateRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\CreateRole.aspx.designer.cs">
+      <DependentUpon>CreateRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\RoleMenuMapping.aspx.cs">
+      <DependentUpon>RoleMenuMapping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\RoleMenuMapping.aspx.designer.cs">
+      <DependentUpon>RoleMenuMapping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\UpdateCustomer.aspx.cs">
+      <DependentUpon>UpdateCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\UpdateCustomer.aspx.designer.cs">
+      <DependentUpon>UpdateCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\UpdateDesignation.aspx.cs">
+      <DependentUpon>UpdateDesignation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\UpdateDesignation.aspx.designer.cs">
+      <DependentUpon>UpdateDesignation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\UpdateRole.aspx.cs">
+      <DependentUpon>UpdateRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\UpdateRole.aspx.designer.cs">
+      <DependentUpon>UpdateRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Admin\UpdateUser.aspx.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Admin\UpdateUser.aspx.designer.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\CreateBrand.aspx.cs">
+      <DependentUpon>CreateBrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\CreateBrand.aspx.designer.cs">
+      <DependentUpon>CreateBrand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\CreateCategory.aspx.cs">
+      <DependentUpon>CreateCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\CreateCategory.aspx.designer.cs">
+      <DependentUpon>CreateCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\CreateFoodSchedule.aspx.cs">
+      <DependentUpon>CreateFoodSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\CreateFoodSchedule.aspx.designer.cs">
+      <DependentUpon>CreateFoodSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\CreateMeasurement.aspx.cs">
+      <DependentUpon>CreateMeasurement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\CreateMeasurement.aspx.designer.cs">
+      <DependentUpon>CreateMeasurement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\CreateProduct.aspx.cs">
+      <DependentUpon>CreateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\CreateProduct.aspx.designer.cs">
+      <DependentUpon>CreateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\CreateRegion.aspx.cs">
+      <DependentUpon>CreateRegion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\CreateRegion.aspx.designer.cs">
+      <DependentUpon>CreateRegion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\CreateSupplier.aspx.cs">
+      <DependentUpon>CreateSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\CreateSupplier.aspx.designer.cs">
+      <DependentUpon>CreateSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\UpdateBrand.aspx.cs">
+      <DependentUpon>UpdateBrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\UpdateBrand.aspx.designer.cs">
+      <DependentUpon>UpdateBrand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\UpdateCategory.aspx.cs">
+      <DependentUpon>UpdateCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\UpdateCategory.aspx.designer.cs">
+      <DependentUpon>UpdateCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\UpdateFoodSchedule.aspx.cs">
+      <DependentUpon>UpdateFoodSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\UpdateFoodSchedule.aspx.designer.cs">
+      <DependentUpon>UpdateFoodSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\UpdateMeasurement.aspx.cs">
+      <DependentUpon>UpdateMeasurement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\UpdateMeasurement.aspx.designer.cs">
+      <DependentUpon>UpdateMeasurement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\UpdateProduct.aspx.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\UpdateProduct.aspx.designer.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\UpdateRegion.aspx.cs">
+      <DependentUpon>UpdateRegion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\UpdateRegion.aspx.designer.cs">
+      <DependentUpon>UpdateRegion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Item\UpdateSupplier.aspx.cs">
+      <DependentUpon>UpdateSupplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Item\UpdateSupplier.aspx.designer.cs">
+      <DependentUpon>UpdateSupplier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PurchaseUI\CreatePurchase.aspx.cs">
+      <DependentUpon>CreatePurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PurchaseUI\CreatePurchase.aspx.designer.cs">
+      <DependentUpon>CreatePurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PurchaseUI\PurchaseLedgerDetails.aspx.cs">
+      <DependentUpon>PurchaseLedgerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PurchaseUI\PurchaseLedgerDetails.aspx.designer.cs">
+      <DependentUpon>PurchaseLedgerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PurchaseUI\ReturnPurchase.aspx.cs">
+      <DependentUpon>ReturnPurchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PurchaseUI\ReturnPurchase.aspx.designer.cs">
+      <DependentUpon>ReturnPurchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaleUI\AdvanceSaleReceive.aspx.cs">
+      <DependentUpon>AdvanceSaleReceive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SaleUI\AdvanceSaleReceive.aspx.designer.cs">
+      <DependentUpon>AdvanceSaleReceive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaleUI\CreateSale.aspx.cs">
+      <DependentUpon>CreateSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SaleUI\CreateSale.aspx.designer.cs">
+      <DependentUpon>CreateSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaleUI\CustomerAmountReceived.aspx.cs">
+      <DependentUpon>CustomerAmountReceived.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SaleUI\CustomerAmountReceived.aspx.designer.cs">
+      <DependentUpon>CustomerAmountReceived.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaleUI\ReturnSale.aspx.cs">
+      <DependentUpon>ReturnSale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SaleUI\ReturnSale.aspx.designer.cs">
+      <DependentUpon>ReturnSale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SaleUI\SaleLedgerDetails.aspx.cs">
+      <DependentUpon>SaleLedgerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SaleUI\SaleLedgerDetails.aspx.designer.cs">
+      <DependentUpon>SaleLedgerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WebServices\AutoCompleteService.asmx.cs">
+      <DependentUpon>AutoCompleteService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RMS.BLL\RMS.BLL.csproj">
+      <Project>{62c96583-57fa-4163-9259-1cdb505475a4}</Project>
+      <Name>RMS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.DAL\RMS.DAL.csproj">
+      <Project>{72403329-03e0-43b7-a1e1-a442cedcfa5a}</Project>
+      <Name>RMS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Model\RMS.Model.csproj">
+      <Project>{6a7a69ea-3437-4c80-95c9-e4505c1cc7f7}</Project>
+      <Name>RMS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\SaleReport\" />
+    <Folder Include="Site\Customer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\ItemReport\SchedulewiseFood.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SchedulewiseFood.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ItemReport\ItemwiseProductDetail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemwiseProductDetail.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ItemReport\RegionDetail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RegionDetail.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PurchaseReport\InvoicewisePurchaseDetail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InvoicewisePurchaseDetail.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PurchaseReport\SupplierwisePurchaseDetail.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SupplierwisePurchaseDetail.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61203</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61203/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

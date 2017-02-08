@@ -1,0 +1,417 @@
+﻿using System;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using RMS.Model;
+using RMS.BLL;
+using RMS.DAL;
+
+namespace RMS.UI.SaleUI
+{
+    public partial class CreateSale : BasePage
+    {
+        private Product objProduct;
+        private Sale objSale;
+        private SaleDetail objSaleDetail;
+        private ProductBiz objProductBiz;
+        private SaleBiz objSaleBiz;
+        private decimal tot, code, qty, stock;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+
+            }
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            pnlsaleGridview.Visible = true;
+            if (Session["SaleDetail"] == null)
+            {
+                DataTable dt = GetDataTable();
+                DataRow dr = dt.NewRow();
+                dr["ProductCode"] = Convert.ToInt16(txtProductCode.Text.Trim());
+                dr["ProductName"] = txtProductName.Text;
+                dr["SaleQuantity"] = Convert.ToDecimal(txtQty.Text);
+                dr["SalePrice"] = Convert.ToDecimal(txtProductPricePerUnit.Text);
+                dr["ProductVat"] = Convert.ToDecimal(txtVat.Text);
+                dr["VatAmount"] = (Convert.ToDecimal(txtVat.Text) * Convert.ToDecimal(txtProductPricePerUnit.Text) / 100 * Convert.ToDecimal(txtQty.Text));
+                dr["TotalAmount"] = Convert.ToDecimal(txtProductPricePerUnit.Text) * Convert.ToDecimal(txtQty.Text);
+
+                dt.Rows.Add(dr);
+
+                Session["SaleDetail"] = dt;
+                gvSellProduct.DataSource = dt;
+                gvSellProduct.DataBind();
+
+                ResetField();
+            }
+            else
+            {
+                DataTable dt = (DataTable)Session["SaleDetail"];
+                DataRow[] d = dt.Select("ProductCode=" + txtProductCode.Text);
+                if (d.Length > 0)
+                {
+                    int i;
+                    for (i = 0; i < dt.Rows.Count; i++)
+                    {
+                        if (Convert.ToInt16(dt.Rows[i]["ProductCode"]) == Convert.ToInt32(txtProductCode.Text))
+                        {
+                            dt.Rows[i]["ProductCode"] = Convert.ToInt16(txtProductCode.Text.Trim());
+                            dt.Rows[i]["ProductName"] = txtProductName.Text;
+                            dt.Rows[i]["SaleQuantity"] = Convert.ToDouble(txtQty.Text);
+                            dt.Rows[i]["SalePrice"] = Convert.ToDouble(txtProductPricePerUnit.Text);
+                            dt.Rows[i]["ProductVat"] = Convert.ToDouble(txtVat.Text);
+                            dt.Rows[i]["VatAmount"] = (Convert.ToDouble(txtVat.Text) * Convert.ToDouble(txtProductPricePerUnit.Text) / 100 * Convert.ToDouble(txtQty.Text)).ToString();
+                            dt.Rows[i]["TotalAmount"] = Convert.ToDouble(txtProductPricePerUnit.Text) * Convert.ToDouble(txtQty.Text);
+                        }
+                    }
+                }
+                else
+                {
+                    DataRow dr = dt.NewRow();
+                    dr["ProductCode"] = Convert.ToInt16(txtProductCode.Text.Trim());
+                    dr["ProductName"] = txtProductName.Text;
+                    dr["SaleQuantity"] = Convert.ToDouble(txtQty.Text);
+                    dr["SalePrice"] = Convert.ToDouble(txtProductPricePerUnit.Text);
+                    dr["ProductVat"] = Convert.ToDouble(txtVat.Text);
+                    dr["VatAmount"] = (Convert.ToDouble(txtVat.Text) * Convert.ToDouble(txtProductPricePerUnit.Text) / 100 * Convert.ToDouble(txtQty.Text)).ToString();
+                    dr["TotalAmount"] = Convert.ToDouble(txtProductPricePerUnit.Text) * Convert.ToDouble(txtQty.Text);
+
+                    dt.Rows.Add(dr);
+                }
+
+                Session["SaleDetail"] = dt;
+                gvSellProduct.DataSource = dt;
+                gvSellProduct.DataBind();
+
+                ResetField();
+            }
+
+            //AmountCalculation();
+
+            btnSell.Visible = true;
+
+            txtProductCode.Attributes.Add("onfocus", "this.select()");
+            txtProductCode.Focus();
+        }
+
+        private DataTable GetDataTable()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ProductCode", typeof(int));
+            dt.Columns.Add("ProductName", typeof(string));
+            dt.Columns.Add("SaleQuantity", typeof(decimal));
+            dt.Columns.Add("SalePrice", typeof(decimal));
+            dt.Columns.Add("ProductVat", typeof(decimal));
+            dt.Columns.Add("VatAmount", typeof(decimal));
+            dt.Columns.Add("TotalAmount", typeof(decimal));
+
+            return dt;
+        }
+
+        private void ResetField()
+        {
+            txtProductCode.Text = string.Empty;
+            txtProductName.Text = string.Empty;
+            txtProductStock.Text = string.Empty;
+            txtProductPricePerUnit.Text = string.Empty;
+            txtQty.Text = string.Empty;
+            txtTotalPriceOfWholeQty.Text = string.Empty;
+            txtVat.Text = string.Empty;
+            txtTotalPriceOfWholeProduct.Text = string.Empty;
+        }
+
+        protected void txtProductCode_OnTextChanged(object sender, EventArgs e)
+        {
+            GetProductInfo(txtProductCode.Text.Trim());
+            Autofil();
+        }
+
+        protected void txtProductName_OnTextChanged(object sender, EventArgs e)
+        {
+            GetProductInfo(txtProductName.Text.Trim());
+            Autofil();
+
+        }
+
+        private void Autofil()
+        {
+            StackFrame frame = new StackFrame(1);
+            var methodName = frame.GetMethod().Name;
+            if (objProduct.ProductName != null)
+            {
+                txtProductCode.Text = objProduct.ProductId.ToString();
+                txtProductName.Text = objProduct.ProductName;
+                txtProductStock.Text = objProduct.ProductStock.ToString("N3");
+                txtProductPricePerUnit.Text = objProduct.ProductSellPrice.ToString("N2");
+                lblUnit.Text = objProduct.MeasurementName;
+                lblUnitSell.Text = lblUnit.Text;
+                txtVat.Text = objProduct.Vat.ToString("N2");
+                //txtQty.Text = string.Empty;
+                txtTotalPriceOfWholeQty.Text = string.Empty;
+                txtTotalPriceOfWholeProduct.Text = string.Empty;
+                txtQty.Focus();
+                if (objProduct.ProductStock > 0) return;
+                MessageBox("No product available.");
+                SelectText(methodName == "txtProductCode_OnTextChanged" ? txtProductCode : txtProductName);
+            }
+            else
+            {
+                MessageBox("No product found.");
+                SelectText(methodName == "txtProductCode_OnTextChanged" ? txtProductCode : txtProductName);
+
+            }
+
+
+        }
+
+        protected void txtQty_OnTextChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (decimal.Parse(txtQty.Text.Trim()) > decimal.Parse(txtProductStock.Text))
+                {
+                    MessageBox("Please correct sell quantity.");
+                    SelectText(txtQty);
+                    return;
+                }
+                txtTotalPriceOfWholeQty.Text = (Convert.ToDecimal(txtQty.Text) * Convert.ToDecimal(txtProductPricePerUnit.Text)).ToString("N2");
+                txtTotalPriceOfWholeProduct.Text =
+                    (Convert.ToDecimal(txtTotalPriceOfWholeQty.Text) +
+                     (Convert.ToDecimal(txtTotalPriceOfWholeQty.Text) * Convert.ToDecimal(txtVat.Text) / 100)).ToString("N2");
+            }
+            catch (Exception)
+            {
+
+                MessageBox("Product/Qty Error");
+                txtQty.Text = string.Empty;
+            }
+
+        }
+
+        private void GetProductInfo(string codeOrName)
+        {
+            objProduct = new Product();
+            objProductBiz = new ProductBiz();
+            objProduct = objProductBiz.AddProductForPurchase(codeOrName);
+
+        }
+
+        protected void txtDiscount_OnTextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal total = Convert.ToDecimal(gvSellProduct.FooterRow.Cells[5].Text.Trim()) - Convert.ToDecimal(txtDiscount.Text.Trim());
+                txtToBePaid.Text = txtCustomerDue.Text == string.Empty ? total.ToString("N2") : (total + Convert.ToDecimal(txtCustomerDue.Text)).ToString("N2");
+
+            }
+            catch
+
+            {
+                try
+                {
+                    txtToBePaid.Text = gvSellProduct.FooterRow.Cells[5].Text.Trim();
+
+                }
+                catch { }
+            }
+            txtAmountPaid_OnTextChanged(txtAmountPaid, EventArgs.Empty);
+        }
+
+        protected void txtAmountPaid_OnTextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal changeAmount = Convert.ToDecimal(txtAmountPaid.Text.Trim()) -
+                                                   Convert.ToDecimal(txtToBePaid.Text.Trim());
+                txtChangeAmount.Text = changeAmount.ToString("N2");
+            }
+            catch { }
+
+
+        }
+
+
+        protected void txtCustomerUsername_OnTextChanged(object sender, EventArgs e)
+        {
+            //objSaleBiz = new SaleBiz();
+            //Customer objCustomer=new Customer();
+            //objCustomer = objSaleBiz.GetCustomerInfo(txtCustomerUsername.Text.Trim());
+            //txtCustomerFullName.Text = objCustomer.CustomerFullName;
+            //txtCustomerContactNo.Text = objCustomer.CustomerContactNumber;
+            //txtCustomerDue.Text = objCustomer.CustomerTotalDue;
+            //txtToBePaid.Text = txtToBePaid.Text!=string.Empty ? (Convert.ToDecimal(txtToBePaid.Text) + Convert.ToDecimal(objCustomer.CustomerTotalDue)).ToString("N2") : Convert.ToDecimal(objCustomer.CustomerTotalDue).ToString("N2");
+
+        }
+
+        protected void txtCustomerFullName_OnTextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtCustomerContactNo_OnTextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SelectText(TextBox txt)
+        {
+            // Is there a ScriptManager on the page?
+            if (ScriptManager.GetCurrent(txt.Page) != null && ScriptManager.GetCurrent(txt.Page).IsInAsyncPostBack)
+                // Set ctrlToSelect
+                ScriptManager.RegisterStartupScript(txt.Page,
+                                           txt.Page.GetType(),
+                                           "SetFocusInUpdatePanel-" + txt.ClientID,
+                                           String.Format("ctrlToSelect='{0}';", txt.ClientID),
+                                           true);
+            else
+                txt.Page.ClientScript.RegisterStartupScript(txt.Page.GetType(),
+                                                 "Select-" + txt.ClientID,
+                                                 String.Format("document.getElementById('{0}').select();", txt.ClientID),
+                                                 true);
+        }
+
+        protected void btnSell_OnClick(object sender, EventArgs e)
+        {
+            objSale = new Sale();
+            objSaleBiz = new SaleBiz();
+            objSale.CustomerUsername = txtCustomerUsername.Text.Trim();
+            objSale.TotalAmount = txtToBePaid.Text == string.Empty ? 0 : decimal.Parse(txtToBePaid.Text);
+            objSale.DiscountAmount = txtDiscount.Text.Trim() == string.Empty ? 0 : decimal.Parse(txtDiscount.Text.Trim());
+            objSale.PaidAmount = decimal.Parse(txtAmountPaid.Text);
+            objSale.PaymentMethod = Convert.ToByte(ddlPaymentMethod.SelectedValue);
+            objSale.CreatedBy = Convert.ToInt16(Session["UserId"].ToString());
+            objSale.Remarks = txtRemarks.Text.Trim();
+
+            // Insert purchase details
+            DataTable dt = (DataTable)Session["SaleDetail"];
+            int i;
+            for (i = 0; i < dt.Rows.Count; i++)
+            {
+                objSale.ProductId = short.Parse(gvSellProduct.Rows[i].Cells[0].Text);
+                objSale.SellQuantity = decimal.Parse(gvSellProduct.Rows[i].Cells[2].Text);
+                objSale.SellPrice = decimal.Parse(gvSellProduct.Rows[i].Cells[3].Text);
+                objSaleBiz.SellProduct(objSale);
+                objSale.PaymentMethod = 0;
+            }
+
+            MessageBox("You are successfully sale listed products. Thanks!");
+
+            Session.Remove("SaleDetail");
+
+            Response.Redirect("CreateSale.aspx");
+        }
+
+        protected void gvSellProduct_OnRowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "RowDelete")
+            {
+                GridViewRow gvr = (GridViewRow)((Control)e.CommandSource).NamingContainer;
+                int rowIndex = gvr.RowIndex;
+                int id = Convert.ToInt32(((Label)gvr.FindControl("ProductCode")).Text);
+                DataTable dt = (DataTable)Session["SaleDetail"];
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    if (Convert.ToInt32(dataRow["ProductCode"]) == id)
+                    {
+                        dataRow.Delete();
+                        break;
+                    }
+                }
+                Session["SaleDetail"] = dt;
+                gvSellProduct.DataSource = dt;
+                gvSellProduct.DataBind();
+
+                txtProductCode.Attributes.Add("onfocus", "this.select()");
+                txtProductCode.Focus();
+            }
+
+            if (e.CommandName == "RowEdit")
+            {
+                GridViewRow gvr = (GridViewRow)((Control)e.CommandSource).NamingContainer;
+                int rowIndex = gvr.RowIndex;
+                int id = Convert.ToInt32(((Label)gvr.FindControl("ProductCode")).Text);
+                DataTable dt = (DataTable)Session["SaleDetail"];
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    if (Convert.ToInt32(dataRow["ProductCode"]) == id)
+                    {
+                        objProductBiz = new ProductBiz();
+                        objProduct = new Product();
+                        objProduct = objProductBiz.AddProductForPurchase(id.ToString());
+
+                        txtProductStock.Text = objProduct.ProductStock.ToString();
+                        txtProductCode.Text = dataRow["ProductCode"].ToString();
+                        txtProductName.Text = dataRow["ProductName"].ToString();
+                        txtProductPricePerUnit.Text = dataRow["SalePrice"].ToString();
+                        txtVat.Text = dataRow["ProductVat"].ToString();
+                        txtQty.Text = dataRow["SaleQuantity"].ToString();
+                        txtTotalPriceOfWholeQty.Text = dataRow["TotalAmount"].ToString();
+                        txtTotalPriceOfWholeProduct.Text = (Convert.ToDecimal(dataRow["TotalAmount"]) + Convert.ToDecimal(dataRow["ProductVat"])).ToString();
+                        break;
+                    }
+                }
+                txtQty.Attributes.Add("onfocus", "this.select()");
+                txtQty.Focus();
+            }
+
+            if (gvSellProduct.Rows.Count == 0)
+            {
+                txtProductCode.Attributes.Add("onfocus", "this.select()");
+                txtProductCode.Focus();
+
+                txtToBePaid.Text = string.Empty;
+                pnlsaleGridview.Visible = false;
+                btnSell.Visible = false;
+            }
+        }
+
+        private decimal totalAmount = 0;
+        private decimal vatAmount = 0;
+        private decimal grandTotal = 0;
+        protected void gvSellProduct_OnRowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[0].HorizontalAlign = HorizontalAlign.Center;
+                e.Row.Cells[2].HorizontalAlign = HorizontalAlign.Right;
+                e.Row.Cells[3].HorizontalAlign = HorizontalAlign.Right;
+                e.Row.Cells[4].HorizontalAlign = HorizontalAlign.Right;
+                e.Row.Cells[5].HorizontalAlign = HorizontalAlign.Right;
+
+                totalAmount += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "TotalAmount"));
+                vatAmount += Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "VatAmount"));
+
+                //AmountCalculation();
+
+                txtToBePaid.Text = (totalAmount + vatAmount).ToString("N2"); //Display amount in sale master Total Amount field
+            }
+            else if (e.Row.RowType == DataControlRowType.Footer)
+            {
+                e.Row.Cells[4].Text = "Grand Total";
+                e.Row.Cells[4].Font.Bold = true;
+                e.Row.Cells[4].HorizontalAlign = HorizontalAlign.Right;
+
+                e.Row.Cells[5].Text = vatAmount.ToString("N2");
+                e.Row.Cells[5].Font.Bold = true;
+                e.Row.Cells[5].HorizontalAlign = HorizontalAlign.Right;
+
+                e.Row.Cells[6].Text = totalAmount.ToString("N2");
+                e.Row.Cells[6].Font.Bold = true;
+                e.Row.Cells[6].HorizontalAlign = HorizontalAlign.Right;
+
+                e.Row.Cells[7].Text = (totalAmount + vatAmount).ToString("N2");
+                e.Row.Cells[7].Font.Bold = true;
+                e.Row.Cells[7].HorizontalAlign = HorizontalAlign.Center;
+            }
+        }
+    }
+}

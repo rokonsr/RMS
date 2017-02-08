@@ -1,0 +1,329 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Rms.Master" AutoEventWireup="true" CodeBehind="CreateSale.aspx.cs" Inherits="RMS.UI.SaleUI.CreateSale" %>
+
+<%@ MasterType VirtualPath="~/Rms.Master" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Panel runat="server" ID="pnlCode" Style="margin-bottom: 10px; text-align: center;">
+        <div class="input-validation"></div>
+        <table>
+            <tr>
+                <td>
+                    <label style="width: 50px;">Code</label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" pattern="^[0-9]{1,5}$" ID="txtProductCode" CssClass="form-control" Width="155px" ClientIDMode="Static"></asp:TextBox>
+
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtProductCode" runat="server" Display="Dynamic" ErrorMessage="Required!" ForeColor="red"></asp:RequiredFieldValidator>
+                </td>
+
+                <td>
+                    <label style="margin-left: 50px; width: 50px;">Name</label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtProductName" CssClass="form-control" Width="280px" ClientIDMode="Static"></asp:TextBox>
+
+                </td>
+                <td>
+                    <label style="margin-left: 50px; width: 50px">Stock</label>
+                </td>
+                <td>
+                    <div class="input-group">
+                        <asp:TextBox runat="server" ID="txtProductStock" ClientIDMode="Static" CssClass="form-control" Width="100px" TabIndex="-1"></asp:TextBox>
+                        <asp:Label runat="server" ID="lblUnit" CssClass="input-group-addon" Text="Unit" Style="min-width: 80px;" TabIndex="-1"></asp:Label>
+
+                    </div>
+                </td>
+                <td>
+                    <label style="margin-left: 50px; width: 50px">Unit Price</label>
+                </td>
+                <td>
+                    <div class="input-group">
+                        <asp:TextBox runat="server" ID="txtProductPricePerUnit" ClientIDMode="Static" CssClass="form-control" Width="120px" TabIndex="-1"></asp:TextBox>
+
+                        <span class="input-group-addon">BDT</span>
+                    </div>
+
+
+                </td>
+
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </asp:Panel>
+
+    <asp:Panel runat="server" ID="pnlQty" Style="margin-bottom: 10px; text-align: center;">
+
+        <table>
+            <tr>
+                <td>
+                    <label style="width: 50px;">Qty</label>
+                </td>
+                <td>
+                    <div class="input-group">
+                        <asp:TextBox runat="server" ID="txtQty" ClientIDMode="Static" CssClass="form-control" Width="75px"></asp:TextBox>
+                        <asp:Label runat="server" ID="lblUnitSell" CssClass="input-group-addon" Text="Unit" Style="min-width: 80px" TabIndex="-1"></asp:Label>
+                    </div>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="txtQty" runat="server" ErrorMessage="Required!" Display="Dynamic" ForeColor="red"></asp:RequiredFieldValidator>
+
+
+                </td>
+                <td>
+                    <label style="margin-left: 50px; width: 50px">Price</label>
+                </td>
+
+                <td>
+                    <div class="input-group">
+
+
+                        <asp:TextBox runat="server" ID="txtTotalPriceOfWholeQty" ClientIDMode="Static" CssClass="form-control" Width="120px" TabIndex="-1"></asp:TextBox>
+
+                        <span class="input-group-addon">BDT</span>
+                    </div>
+                </td>
+                <td>
+                    <label style="margin-left: 157px; width: 50px">VAT</label>
+                </td>
+                <td>
+                    <div class="input-group">
+
+
+                        <asp:TextBox runat="server" ID="txtVat" ClientIDMode="Static" CssClass="form-control" Width="143px" TabIndex="-1"></asp:TextBox>
+
+                        <span class="input-group-addon">%</span>
+                    </div>
+                </td>
+                <td>
+                    <label style="margin-left: 50px; width: 50px">Total Price</label>
+                </td>
+                <td>
+                    <div class="input-group">
+
+
+                        <asp:TextBox runat="server" ID="txtTotalPriceOfWholeProduct" ClientIDMode="Static" CssClass="form-control" Width="120px" TabIndex="-1"></asp:TextBox>
+
+                        <span class="input-group-addon">BDT</span>
+                    </div>
+                </td>
+
+
+            </tr>
+        </table>
+    </asp:Panel>
+    <asp:Panel runat="server" ID="pnlAddButton" Style="margin-left: 50px;">
+        <asp:Button runat="server" ID="btnAdd" Text="Add" CssClass="btn btn-primary" Width="155px" OnClick="btnAdd_Click" />
+    </asp:Panel>
+
+
+    <br />
+    <asp:Panel runat="server" ID="pnlsaleGridview" Style="text-align: center;" Visible="False">
+        
+        <asp:GridView ID="gvSellProduct" AutoGenerateColumns="False" ShowFooter="True" runat="server" OnRowCommand="gvSellProduct_OnRowCommand" OnRowDataBound="gvSellProduct_OnRowDataBound">
+            <HeaderStyle CssClass="gvheaderstyle" />
+            <RowStyle CssClass="gvrowstyle" />
+            <Columns>
+                <asp:TemplateField HeaderText="Product Code">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="ProductCode" Text='<%# Bind("ProductCode") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Product Name">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="ProductName" Text='<%# Bind("ProductName") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Sale Quantity">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="SaleQuantity" Text='<%# Bind("SaleQuantity") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Sale Price">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="SalePrice" Text='<%# Bind("SalePrice", "{0:n}") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Product Vat">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="ProductVat" Text='<%# Bind("ProductVat", "{0:n}") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Vat Amount">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="VatAmount" Text='<%# Bind("VatAmount", "{0:n}") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Total">
+                    <ItemTemplate>
+                        <asp:Label runat="server" ID="ProductTotal" Text='<%# Bind("TotalAmount", "{0:n}")%>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Action">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="btnDelete" runat="server" CausesValidation="False" CommandName="RowDelete" Text="Delete"></asp:LinkButton> |
+                        <asp:LinkButton ID="btnEdit" runat="server" CausesValidation="False" CommandName="RowEdit" Text="Edit"></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+            <FooterStyle CssClass="footertotal" />
+        </asp:GridView>
+        
+    </asp:Panel>
+    <br />
+
+
+
+    <asp:Panel runat="server" ID="pnlId" Style="margin-bottom: 10px; text-align: center;">
+
+        <table>
+            <tr>
+                <td>
+                    <label style="width: 50px; text-indent: -20px">Username</label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtCustomerUsername" CssClass="form-control" Width="155px" ClientIDMode="Static" Placeholder="Customer Username" OnTextChanged="txtCustomerUsername_OnTextChanged"></asp:TextBox>
+
+                </td>
+                <td>
+                    <label style="margin-left: 20px; width: 80px">Name</label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtCustomerFullName" CssClass="form-control" Width="173px" ClientIDMode="Static" AutoPostBack="True" Placeholder="Customer Full Name" OnTextChanged="txtCustomerFullName_OnTextChanged"></asp:TextBox>
+                </td>
+                <td>
+                    <label style="margin-left: 117px; width: 90px">Contact No.</label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtCustomerContactNo" CssClass="form-control" Width="180px" ClientIDMode="Static" AutoPostBack="True" Placeholder="Customer Contact No." OnTextChanged="txtCustomerContactNo_OnTextChanged"></asp:TextBox>
+                </td>
+
+                <td>
+                    <label style="margin-left: 50px; width: 50px">Due</label>
+                </td>
+                <td>
+                    <div class="input-group">
+
+                        <asp:TextBox runat="server" ID="txtCustomerDue" CssClass="form-control" Width="120px" ReadOnly="True" Enabled="False" TabIndex="-1"></asp:TextBox>
+
+                        <span class="input-group-addon">BDT</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
+
+
+    <asp:Panel runat="server" ID="pnlDiscount" Style="margin-bottom: 10px; text-align: center;">
+
+        <table>
+            <tr>
+                <td>
+                    <label style="text-indent: -15px; width: 50px">Discount</label>
+                </td>
+                <td>
+                    <div class="input-group">
+
+
+                        <asp:TextBox runat="server" pattern="^\d+(\.\d{1,2})?$" oninvalid="this.classList.add('customInvalid');setCustomValidity('Invalid amount!')" onkeypress="this.classList.remove('customInvalid');" oninput="setCustomValidity('')" ID="txtDiscount" CssClass="form-control" Width="102px" ClientIDMode="Static" AutoPostBack="True" OnTextChanged="txtDiscount_OnTextChanged"></asp:TextBox>
+
+                        <span class="input-group-addon">BDT</span>
+                    </div>
+                </td>
+                <td>
+                    <label style="margin-left: 20px; width: 80px">Customer Name</label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtCustomerNameAnonymous" CssClass="form-control" Width="173px" ClientIDMode="Static" AutoPostBack="True"></asp:TextBox>
+                </td>
+                <td>
+                    <label style="margin-left: 80px; width: 127px">Payment Method</label>
+                </td>
+                <td>
+                    <asp:DropDownList runat="server" ID="ddlPaymentMethod" CssClass="form-control" Width="180px" ClientIDMode="Static">
+                        <asp:ListItem Text="Cash" Value="1" Selected="True"></asp:ListItem>
+                        <asp:ListItem Text="Cheque " Value="2"></asp:ListItem>
+                        <asp:ListItem Text="Credit Card" Value="3"></asp:ListItem>
+                        <asp:ListItem Text="bKash" Value="4"></asp:ListItem>
+                        <asp:ListItem Text="Roket" Value="5"></asp:ListItem>
+                        <asp:ListItem Text="Other" Value="6"></asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+                <td>
+                    <label style="margin-left: 20px; width: 80px">To Be Paid</label>
+                </td>
+                <td>
+                    <div class="input-group">
+
+
+                        <asp:TextBox runat="server" ID="txtToBePaid" CssClass="form-control" Width="120px" ReadOnly="True" Enabled="False" TabIndex="-1" ForeColor="Red" BackColor="#F8F8F8" Font-Bold="True"></asp:TextBox>
+
+                        <span class="input-group-addon">BDT</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
+    <asp:Panel runat="server" ID="pnlAmountPaid" Style="margin-bottom: 10px; text-align: center;">
+
+        <table>
+            <tr>
+                <td>
+                    <label style="width: 50px; text-indent: -10px">Amount Paid</label>
+                </td>
+                <td>
+                    <div class="input-group">
+                        <asp:TextBox runat="server" pattern="^\d+(\.\d{1,2})?$" ID="txtAmountPaid" CssClass="form-control" Width="102px" ClientIDMode="Static" AutoPostBack="True" OnTextChanged="txtAmountPaid_OnTextChanged"></asp:TextBox>
+                        <span class="input-group-addon">BDT</span>
+
+                    </div>
+                </td>
+                <td>
+                    <label style="margin-left: 20px; width: 80px">Change Amount</label>
+                </td>
+
+                <td>
+                    <div class="input-group">
+
+
+                        <asp:TextBox runat="server" ID="txtChangeAmount" CssClass="form-control" Width="120px" ReadOnly="True" Enabled="False" TabIndex="-1"></asp:TextBox>
+
+                        <span class="input-group-addon">BDT</span>
+                    </div>
+                </td>
+                <td>
+                    <label style="margin-left: 134px; width: 72px">Remarks</label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtRemarks" CssClass="form-control" Width="454px" Height="34px" TextMode="MultiLine" ClientIDMode="Static"></asp:TextBox>
+                </td>
+            </tr>
+        </table>
+    </asp:Panel>
+
+
+    <asp:Panel runat="server" ID="pnlsale" Style="margin-left: 50px;" Visible="True">
+        <asp:Button runat="server" ID="btnSell" CssClass="btn btn-primary" Visible="False" CausesValidation="False" Text="Sell" ClientIDMode="Static" Width="155px" OnClick="btnSell_OnClick" />
+    </asp:Panel>
+    <br />
+    
+    <script>
+        $(function () {
+
+            $("#txtQty").keyup(function () {
+                var qty = parseFloat($(this).val());
+                var price = parseFloat($("#txtProductPricePerUnit").val());
+                var total = (qty * price).toFixed(2);
+
+                var vat = parseFloat($("#txtVat").val());
+                var vatAmount = parseFloat(total * vat / 100).toFixed(2);
+                var productTotal = parseFloat(total + vatAmount).toFixed(2);
+                $("#txtTotalPriceOfWholeQty").val(total);
+                $("#txtTotalPriceOfWholeProduct").val(productTotal);
+            });
+        });
+    </script>
+
+</asp:Content>
