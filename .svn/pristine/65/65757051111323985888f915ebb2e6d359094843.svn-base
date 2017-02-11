@@ -17,6 +17,7 @@ namespace RMS.UI.SaleUI
         private SaleDetail objSaleDetail;
         private ProductBiz objProductBiz;
         private SaleBiz objSaleBiz;
+        private decimal tot, code, qty, stock;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -242,6 +243,7 @@ namespace RMS.UI.SaleUI
 
                 txtToBePaid.Text = string.Empty;
                 pnlSaleDetail.Visible = false;
+                btnSell.Visible = false;
             }
         }
 

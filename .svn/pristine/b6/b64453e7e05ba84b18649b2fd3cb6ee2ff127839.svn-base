@@ -5,7 +5,6 @@ using System.Web.UI.WebControls;
 using RMS.BLL;
 using RMS.DAL;
 using RMS.Model;
-using System.Data;
 
 namespace RMS.UI.Admin
 {
@@ -49,31 +48,21 @@ namespace RMS.UI.Admin
 
         protected void ddlCompanyName_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ddlCompanyName.SelectedIndex == 0)
-            {
-                pnlUpdateCompany.Visible = false;
-                pnlUpdateCompany.Controls.Clear();
-            }
-            else
-            {
-                pnlUpdateCompany.Visible = true;
-                objCompanyInfo = new CompanyInfo();
-                objCompanyInfoBiz = new CompanyInfoBiz();
+            objCompanyInfo = new CompanyInfo();
+            objCompanyInfoBiz = new CompanyInfoBiz();
 
-                byte companyId = Convert.ToByte(ddlCompanyName.SelectedValue);
-                objCompanyInfo = objCompanyInfoBiz.GetCompanyInfoForUpdateCompanyInfo(companyId);
+            byte companyId = Convert.ToByte(ddlCompanyName.SelectedValue);
+            objCompanyInfo = objCompanyInfoBiz.GetCompanyInfoForUpdateCompanyInfo(companyId);
 
-                txtUpdateCompanyName.Text = objCompanyInfo.CompanyName;
-                txtUpdateCompanyAddress.Text = objCompanyInfo.CompanyAddress;
-                txtUpdateCompanyPhoneNo.Text = objCompanyInfo.CompanyPhone;
-                txtUpdateCompanyFax.Text = objCompanyInfo.CompanyFax;
-                txtUpdateCompanyEmail.Text = objCompanyInfo.CompanyEmail;
-                txtUpdateTradeLicense.Text = objCompanyInfo.TradeLicense;
-                txtUpdateTINCertificate.Text = objCompanyInfo.TINCertificate;
-                txtUpdateBSTIApproval.Text = objCompanyInfo.BSTIApproval;
-                txtUpdateVATRegNumber.Text = objCompanyInfo.VATRegNumber;
-            }
-            
+            txtUpdateCompanyName.Text = objCompanyInfo.CompanyName;
+            txtUpdateCompanyAddress.Text = objCompanyInfo.CompanyAddress;
+            txtUpdateCompanyPhoneNo.Text = objCompanyInfo.CompanyPhone;
+            txtUpdateCompanyFax.Text = objCompanyInfo.CompanyFax;
+            txtUpdateCompanyEmail.Text = objCompanyInfo.CompanyEmail;
+            txtUpdateTradeLicense.Text = objCompanyInfo.TradeLicense;
+            txtUpdateTINCertificate.Text = objCompanyInfo.TINCertificate;
+            txtUpdateBSTIApproval.Text = objCompanyInfo.BSTIApproval;
+            txtUpdateVATRegNumber.Text = objCompanyInfo.VATRegNumber;
 
         }
 
@@ -99,13 +88,6 @@ namespace RMS.UI.Admin
             objCompanyInfoBiz.UpdateCompanyInfo(objCompanyInfo);
 
             return true;
-        }
-
-        protected void btnCancel_OnClick(object sender, EventArgs e)
-        {
-            
-            pnlUpdateCompany.Visible = false;
-            ddlCompanyName.SelectedIndex = 0;
         }
     }
 }

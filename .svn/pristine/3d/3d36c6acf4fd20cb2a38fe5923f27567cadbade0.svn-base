@@ -24,8 +24,6 @@
         </tr>
     </table>
         </div>
-    <asp:Panel ID="pnlUpdateCompany" runat="server" visible="False" BackColor="White" CssClass="updatemodal fade-in fade-out">
-
     <hr/>
      <div class="form-group">
 
@@ -46,7 +44,7 @@
                     <asp:RequiredFieldValidator runat="server" Display="Dynamic" ControlToValidate="txtUpdateCompanyName" ErrorMessage="Required!" ForeColor="Red"></asp:RequiredFieldValidator>
                      <asp:RegularExpressionValidator ID="RegularExpressionValidator2" Display="Dynamic" runat="server" ForeColor="Red" ErrorMessage="Invalid Company Name" ControlToValidate="txtUpdateCompanyName" ValidationExpression="^[a-zA-Z0-9\s]{0,}"></asp:RegularExpressionValidator>
 
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" Display="Dynamic" runat="server" ForeColor="Red" ErrorMessage="Company Name should be 4-150 character Long" ControlToValidate="txtUpdateCompanyName" ValidationExpression="^[\s\S]{4,150}"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" Display="Dynamic" runat="server" ForeColor="Red" ErrorMessage="Company Name should be 4-150 character Long" ControlToValidate="txtUpdateCompanyName" ValidationExpression="^[\s\S]{4,20}"></asp:RegularExpressionValidator>
                 </td>
                 
                     </tr>
@@ -102,7 +100,7 @@
                     <td>
                         <asp:Button ID="btnCompanyInfoUpdate" runat="server" Text="Update" CssClass="btn btn-primary" OnClick="btnCompanyInfoUpdate_onClick" />
                         &nbsp; &nbsp;             
-                         <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="btn btn-danger" CausesValidation="False" OnClick="btnCancel_OnClick"/>
+                         <asp:Button ID="btnCancel" runat="server" Text="Cancel" CssClass="btn btn-danger" CausesValidation="False" />
                     </td>
                     </tr>
                 </table>
@@ -170,6 +168,6 @@
     </table>
          </div>
      
-    </asp:Panel>
+
 
 </asp:Content>
