@@ -1,0 +1,9 @@
+G:\RestaurantManagementSystem\RMS\RMS.BLL\bin\Release\RMS.BLL.dll
+G:\RestaurantManagementSystem\RMS\RMS.BLL\bin\Release\RMS.BLL.pdb
+G:\RestaurantManagementSystem\RMS\RMS.BLL\bin\Release\RMS.DAL.dll
+G:\RestaurantManagementSystem\RMS\RMS.BLL\bin\Release\RMS.Model.dll
+G:\RestaurantManagementSystem\RMS\RMS.BLL\bin\Release\RMS.DAL.pdb
+G:\RestaurantManagementSystem\RMS\RMS.BLL\bin\Release\RMS.Model.pdb
+G:\RestaurantManagementSystem\RMS\RMS.BLL\obj\Release\RMS.BLL.csprojResolveAssemblyReference.cache
+G:\RestaurantManagementSystem\RMS\RMS.BLL\obj\Release\RMS.BLL.dll
+G:\RestaurantManagementSystem\RMS\RMS.BLL\obj\Release\RMS.BLL.pdb

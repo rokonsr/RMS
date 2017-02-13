@@ -1,0 +1,12 @@
+G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Release\RMS.DAL.dll
+G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Release\RMS.DAL.pdb
+G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Release\Newtonsoft.Json.dll
+G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Release\System.Net.Http.Formatting.dll
+G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Release\System.Web.Http.dll
+G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Release\System.Web.Http.WebHost.dll
+G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Release\Newtonsoft.Json.xml
+G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Release\System.Net.Http.Formatting.xml
+G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Release\System.Web.Http.xml
+G:\RestaurantManagementSystem\RMS\RMS.DAL\bin\Release\System.Web.Http.WebHost.xml
+G:\RestaurantManagementSystem\RMS\RMS.DAL\obj\Release\RMS.DAL.dll
+G:\RestaurantManagementSystem\RMS\RMS.DAL\obj\Release\RMS.DAL.pdb

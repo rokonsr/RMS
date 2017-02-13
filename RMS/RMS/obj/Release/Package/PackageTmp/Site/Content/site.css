@@ -1,0 +1,27 @@
+﻿body {
+}
+
+/* Ajax Modal Design Start */
+
+.tableBackground {
+    background-color: silver;
+    opacity: 0.7;
+}
+
+.updatemodal {
+    padding: 5px 35px;
+    border-radius: 10px;
+    animation-delay: 7s;
+}
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+	opacity:0;  /* make things invisible upon start */
+	animation:fadeIn ease-in 1;
+	animation-fill-mode:forwards;
+	animation-duration:0.5s;
+}
+
+/* Ajax Modal Design End */
+

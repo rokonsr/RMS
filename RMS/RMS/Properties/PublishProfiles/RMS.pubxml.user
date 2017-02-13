@@ -1,0 +1,916 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\User\Desktop\RMS</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>01/30/2017 12:36:52</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.CrystalReports.Engine.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ClientDoc.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommLayer.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommonControls.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommonObjectModel.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.Controllers.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CubeDefModel.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.DataDefModel.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.DataSetConversion.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ObjectFactory.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.Prompting.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ReportDefModel.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.XmlSerialize.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportSource.dll">
+      <publishTime>06/15/2016 04:39:48</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Shared.dll">
+      <publishTime>06/15/2016 04:39:50</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Web.dll">
+      <publishTime>06/15/2016 04:39:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
+      <publishTime>01/30/2017 12:37:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>01/30/2017 12:37:04</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>01/30/2017 12:37:05</publishTime>
+    </File>
+    <File Include="bin/RMS.BLL.dll">
+      <publishTime>02/13/2017 15:29:15</publishTime>
+    </File>
+    <File Include="bin/RMS.DAL.dll">
+      <publishTime>02/13/2017 15:29:15</publishTime>
+    </File>
+    <File Include="bin/RMS.dll">
+      <publishTime>02/13/2017 15:29:18</publishTime>
+    </File>
+    <File Include="bin/RMS.Model.dll">
+      <publishTime>02/13/2017 15:29:15</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>01/30/2017 12:37:01</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>01/30/2017 12:37:01</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>01/30/2017 12:37:01</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>01/30/2017 12:37:01</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>01/30/2017 12:37:01</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>01/30/2017 12:37:01</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>01/30/2017 12:37:01</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>01/30/2017 12:37:01</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>01/30/2017 12:37:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>01/30/2017 12:37:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>01/30/2017 12:37:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>01/30/2017 12:37:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>01/30/2017 12:37:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>01/30/2017 12:37:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>01/30/2017 12:37:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>01/30/2017 12:37:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>01/30/2017 12:37:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>01/30/2017 12:37:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>01/30/2017 12:37:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>01/30/2017 12:37:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>01/30/2017 12:37:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>01/30/2017 12:37:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>01/30/2017 12:37:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>01/30/2017 12:37:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>01/30/2017 12:37:04</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>01/30/2017 12:37:04</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>07/07/2015 00:51:38</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>01/30/2017 12:37:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>01/30/2017 12:37:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/30/2017 12:37:00</publishTime>
+    </File>
+    <File Include="Content/AutoComplete/jquery-ui.css">
+      <publishTime>01/30/2017 12:31:24</publishTime>
+    </File>
+    <File Include="Content/AutoComplete/jquery-ui.js">
+      <publishTime>01/30/2017 12:31:24</publishTime>
+    </File>
+    <File Include="Content/AutoComplete/jquery.js">
+      <publishTime>01/30/2017 12:31:24</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css.map">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>02/11/2017 10:11:19</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Home.aspx">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Images/ambient.jpg">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Images/b15.png">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Images/delete.png">
+      <publishTime>02/08/2017 17:44:59</publishTime>
+    </File>
+    <File Include="Images/edit.png">
+      <publishTime>02/08/2017 17:43:52</publishTime>
+    </File>
+    <File Include="Images/res.jpeg">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Images/white.jpg">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Images/woodBrown.jpg">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Images/woodLight.jpg">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Index.aspx">
+      <publishTime>02/06/2017 14:47:28</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>02/11/2017 13:07:43</publishTime>
+    </File>
+    <File Include="Logout.aspx">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="Report/CrystalReportDataSet.xsc">
+      <publishTime>02/04/2017 18:38:56</publishTime>
+    </File>
+    <File Include="Report/CrystalReportDataSet.xss">
+      <publishTime>02/04/2017 18:38:56</publishTime>
+    </File>
+    <File Include="Report/ItemReport/ItemDetail.aspx">
+      <publishTime>02/08/2017 15:42:54</publishTime>
+    </File>
+    <File Include="Report/PurchaseReport/PurchaseDetail.aspx">
+      <publishTime>02/04/2017 16:08:15</publishTime>
+    </File>
+    <File Include="Report/ReportViewer.aspx">
+      <publishTime>02/01/2017 17:42:36</publishTime>
+    </File>
+    <File Include="Rms.Master">
+      <publishTime>02/11/2017 10:09:16</publishTime>
+    </File>
+    <File Include="Scripts/angular-mocks.js">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/angular.js">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/angular.min.js">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/angular.min.js.map">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/AutoCompleteTextBox.js">
+      <publishTime>02/09/2017 13:14:48</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/Custom.js">
+      <publishTime>02/01/2017 12:45:02</publishTime>
+    </File>
+    <File Include="Scripts/DatePicker/jquery-1.10.2.js">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/DatePicker/jquery-ui.css">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/DatePicker/jquery-ui.js">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.map">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Scripts/jQuery_FormError/demo.css">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/jQuery_FormError/index.html">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/jQuery_FormError/jquery-1.7.1.min.js">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/jQuery_FormError/jquery.formError.js">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/jQuery_FormError/README.md">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/jQuery_FormError/success.gif">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/jQuery_FormError/test.cssPosition.html">
+      <publishTime>01/30/2017 12:31:25</publishTime>
+    </File>
+    <File Include="Scripts/tvRoleManagement.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Content/flexslider.css">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Content/site.css">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Content/style.css">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/arrow.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/banner1.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/banner2.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/banner3.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/banner4.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/bg-li-list.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/body-bg.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/fb.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/glass.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/googleplus.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/icecream.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/leaf.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/logo.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/logo.psd">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/p-but.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic1.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic10.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic11.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic12.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic13.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic14.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic15.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic16.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic17.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic18.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic2.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic3.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic4.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic5.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic6.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic7.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic8.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pic9.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/pinterest.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/plate.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/search-icon.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/tw.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/twitter-icon.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Images/woodBrown.jpg">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/index.aspx">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/jquery.flexslider.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/modernizr.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/theme.js">
+      <publishTime>02/02/2017 15:55:38</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/.gitignore">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/arrow.gif">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/example.htm">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/jquery-1.10.2.min.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/jquery.validity.css">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/jquery.validity.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/jquery.validity.lang.de.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/jquery.validity.lang.es.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/jquery.validity.lang.fr.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/jquery.validity.lang.nl.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/jquery.validity.lang.ru.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/jquery.validity.min.js">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/build/README.md">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/compiler/compiler.jar">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/compiler/COPYING">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/compiler/help.txt">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/compiler/README">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/css/arrow.gif">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/css/bootstrap-responsive.css">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/css/bootstrap-responsive.min.css">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/css/bootstrap.css">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/css/bootstrap.min.css">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/css/jquery.validity.css">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/img/glyphicons-halflings-white.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/img/glyphicons-halflings.png">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/base64.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/bootstrap.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/bootstrap.min.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/demo.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/jquery-1.9.0.min.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/jquery.validity.css">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/jquery.validity.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/jquery.validity.lang.de.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/jquery.validity.lang.es.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/jquery.validity.lang.fr.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/jquery.validity.lang.nl.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/jquery.validity.lang.ru.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/jquery.validity.min.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/js/test.jquery.validity.min.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/demo/livetest.htm">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/jquery-1.10.2.min.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/l18n/jquery.validity.lang.de.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/l18n/jquery.validity.lang.es.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/l18n/jquery.validity.lang.fr.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/l18n/jquery.validity.lang.nl.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/l18n/jquery.validity.lang.ru.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/Makefile">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/README.md">
+      <publishTime>01/30/2017 12:31:26</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/src/arrow.gif">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/src/Big.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/src/example.htm">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/src/jquery.validity.core.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/src/jquery.validity.css">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/src/jquery.validity.header.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/src/jquery.validity.outputs.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/src/README.md">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/index.html">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/qunit.css">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/qunit.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/sample/index.htm">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/sample/otherinputs.htm">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/sample/select.test.htm">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/sample/simple.htm">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/sample/textareanonhtmltest.htm">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/testSetup.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/aggregate/distinct.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/aggregate/equal.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/aggregate/sum.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/aggregate/sumMax.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/aggregate/sumMin.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/alphabet.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/greaterThan.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/greaterThanOrEqualTo.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/hidden.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/lessThan.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/lessThanOrEqualTo.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/date.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/email.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/fn.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/guid.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/integer.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/number.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/phone.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/regex.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/time12.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/time24.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/usd.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/match/zip.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/maxLength.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/minCharClass.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/minLength.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/nonHtml.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/range.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/common/require.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/private/addToReport.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/private/capitalize.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/private/debugPrivates.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/private/format.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/private/infer.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/private/numericSum.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/private/validate.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/unit-tests/static.js">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/tests/validity.logo.png">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Scripts/validity-master/version.txt">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="Site/Site.Master">
+      <publishTime>01/30/2017 12:31:27</publishTime>
+    </File>
+    <File Include="UI/Admin/AssignRole.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Admin/CompanyDetail.aspx">
+      <publishTime>02/11/2017 12:57:08</publishTime>
+    </File>
+    <File Include="UI/Admin/CreateCustomer.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Admin/CreateDesignation.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Admin/CreateRole.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Admin/CreateUser.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Admin/RoleMenuMapping.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Admin/UpdateCustomer.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Admin/UpdateDesignation.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Admin/UpdateRole.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Admin/UpdateUser.aspx">
+      <publishTime>02/11/2017 12:57:08</publishTime>
+    </File>
+    <File Include="UI/Item/CreateBrand.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/CreateCategory.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/CreateFoodSchedule.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/CreateMeasurement.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/CreateProduct.aspx">
+      <publishTime>02/12/2017 18:55:36</publishTime>
+    </File>
+    <File Include="UI/Item/CreateRegion.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/CreateSupplier.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/UpdateBrand.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/UpdateCategory.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/UpdateFoodSchedule.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/UpdateMeasurement.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/UpdateProduct.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/UpdateRegion.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/Item/UpdateSupplier.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/PurchaseUI/CreatePurchase.aspx">
+      <publishTime>02/09/2017 10:29:51</publishTime>
+    </File>
+    <File Include="UI/PurchaseUI/PurchaseLedgerDetails.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/PurchaseUI/ReturnPurchase.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/SaleUI/AdvanceSaleReceive.aspx">
+      <publishTime>02/06/2017 14:51:33</publishTime>
+    </File>
+    <File Include="UI/SaleUI/CreateSale.aspx">
+      <publishTime>02/09/2017 18:02:34</publishTime>
+    </File>
+    <File Include="UI/SaleUI/CustomerAmountReceived.aspx">
+      <publishTime>02/06/2017 14:54:43</publishTime>
+    </File>
+    <File Include="UI/SaleUI/ReturnSale.aspx">
+      <publishTime>02/13/2017 15:27:28</publishTime>
+    </File>
+    <File Include="UI/SaleUI/SaleLedgerDetails.aspx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="UI/WebServices/AutoCompleteService.asmx">
+      <publishTime>01/30/2017 12:31:28</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/13/2017 15:29:21</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,4 @@
+G:\RestaurantManagementSystem\RMS\RMS.Model\bin\Release\RMS.Model.dll
+G:\RestaurantManagementSystem\RMS\RMS.Model\bin\Release\RMS.Model.pdb
+G:\RestaurantManagementSystem\RMS\RMS.Model\obj\Release\RMS.Model.dll
+G:\RestaurantManagementSystem\RMS\RMS.Model\obj\Release\RMS.Model.pdb

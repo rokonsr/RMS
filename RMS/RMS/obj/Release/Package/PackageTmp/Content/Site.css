@@ -1,0 +1,173 @@
+﻿body {
+    /*padding-bottom: 10%;
+    background: url('../Images/b15.png')no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-size: 100% 100%;*/
+    background: url('../Images/woodLight.jpg') no-repeat center center fixed;
+    background-color: #dadada;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.horizontally-center {
+    margin-top: 15%;
+}
+
+/* Gridview Styling Start */
+
+.gvheaderstyle th {
+    background-color: #b0c4de;
+    font-weight: bolder;
+    color: #000000;
+    border-width: 1px;
+    border-color: #000000;
+    padding: 5px;
+    text-align: center;
+}
+
+.gvrowstyle {
+    background-color: #eeeeee;
+    color: #000000;
+}
+
+    .gvrowstyle td {
+        padding: 5px;
+    }
+
+.gvcontrolstyle {
+    font-weight: bold;
+    color: #0000FF;
+}
+
+.gvcolumnhide {
+    display: none;
+}
+
+/* Gridview Styling Start */
+
+/* Dynamic Navigation Menu Start */
+
+.StaticMenuItem {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.StaticMenuItemStyle {
+    color: #000000;
+    width: 140px;
+    padding: 15px 5px;
+}
+
+    .StaticMenuItemStyle:hover {
+        color: #000000;
+        width: 140px;
+        background-color: #00bfff;
+    }
+
+/* Menu hiding back of textbox because of input-group class */
+.input-group {
+    z-index: 0;
+}
+
+.DynamicMenuItemStyle {
+    background-color: #e9e9e9;
+    font: 15px calibri;
+    height: 30px;
+    text-align: left;
+    color: #000000;
+    padding: 5px;
+    border-radius: 2px;
+    width: 140px;
+    
+}
+
+    .DynamicMenuItemStyle:hover {
+        background-color: #00bfff;
+        font: 15px calibri;
+        height: 30px;
+        text-align: left;
+        color: #000000;
+        padding: 5px;
+        width: 140px;
+    }
+
+/* Dynamic Navigation Menu End */
+
+/* Ajax Modal Design Start */
+
+.tableBackground {
+    background-color: silver;
+    opacity: 0.7;
+}
+
+.updatemodal {
+    padding: 5px 35px;
+    border-radius: 10px;
+    animation-delay: 0.7s;
+    max-height: 800px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    opacity: 0; /* make things invisible upon start */
+    animation: fadeIn ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+}
+
+/* Ajax Modal Design End */
+
+.tablepadding td {
+    padding: 5px;
+}
+
+.titletd {
+    width: 150px;
+    text-align: left;
+}
+
+.salepagediv table td {
+    padding: 5px 0;
+}
+
+.footertotal td {
+    padding: 5px;
+    background-color: #F7DFB5;
+    color: #8C4510;
+}
+
+/* For remove number spin button - start */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Space between radio button and text */
+.space input[type="radio"] {
+    margin-right: 5px;
+}
+
+.mycheckbox input[type="checkbox"] {
+    margin-right: 5px;
+}
