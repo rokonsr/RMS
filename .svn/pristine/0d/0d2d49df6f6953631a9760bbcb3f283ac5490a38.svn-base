@@ -54,6 +54,50 @@
             </table>
         </asp:Panel>
 
+    <asp:Panel runat="server" ID="pnlCustomer" Visible="False" >
+        <table class="tablepadding">
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="customerUsername">Customer Username</label>
+                        
+                        <asp:TextBox runat="server" ID="txtCustomerUsername" CssClass="form-control" ClientIDMode="Static" ReadOnly="True"></asp:TextBox>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <label>Customer Username</label>
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                    <label>Paid by this invoice</label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtPaidByThisInvoice" CssClass="form-control" ClientIDMode="Static" ReadOnly="False"></asp:TextBox>
+                </td>
+                <td>
+                    <label>Due by this invoice</label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtDueByThisInvoice" CssClass="form-control" ClientIDMode="Static" ReadOnly="True"></asp:TextBox>
+                </td>
+                <td>
+                    <label>Total due</label>
+                </td>
+                <td>
+                    <asp:TextBox runat="server" ID="txtTotalDue" CssClass="form-control" ClientIDMode="Static" ReadOnly="True"></asp:TextBox>
+                </td>
+            </tr>
+        </table>
+        <br/>
+    </asp:Panel>
+    
     <div id="divProductList">
         <table class="tablepadding" style="width: 100%">
             <tr>
